@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "insights-eval"
+version = "0.1.0"
+description = "Evaluate whether an LLM extracts grounded, non-hallucinated insights from interview transcripts."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["anthropic>=1.0", "pydantic>=2"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+insights-eval = "insights_eval.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,86 @@
+[
+  {
+    "id": "retail_stockouts",
+    "title": "Retail COO on promo stockouts",
+    "expect_none": false,
+    "transcript": "Interviewer: Walk me through why shelves go empty on your promoted items.\nCOO: Honestly, the promo calendar is built by marketing in January and replenishment only sees it two weeks before launch. By then the supplier lead time is already longer than the notice we have.\nInterviewer: So who owns the gap?\nCOO: Nobody. Planning thinks marketing owns it, marketing thinks supply chain owns it. We lost roughly 4 percent of promo revenue last year to stockouts and nobody was accountable for that number.\nInterviewer: What do the store managers do?\nCOO: They keep a private spreadsheet of what usually sells out and they over-order by instinct. It works for the experienced ones. The new managers just get burned.\nInterviewer: Anything working well?\nCOO: Our weekly cross-functional call is actually good, people turn up. It just happens after the decisions are made.",
+    "planted": [
+      {"id": "late_calendar", "description": "Promo calendar reaches replenishment too late for supplier lead times", "evidence": ["replenishment only sees it two weeks before launch"]},
+      {"id": "no_owner", "description": "Nobody owns the stockout loss (about 4 percent of promo revenue)", "evidence": ["Planning thinks marketing owns it, marketing thinks supply chain owns it", "nobody was accountable for that number"]},
+      {"id": "private_spreadsheets", "description": "Store managers compensate with private spreadsheets and instinct; new managers struggle", "evidence": ["They keep a private spreadsheet of what usually sells out", "The new managers just get burned"]},
+      {"id": "late_call", "description": "The cross-functional call happens after decisions are made", "evidence": ["It just happens after the decisions are made"]}
+    ]
+  },
+  {
+    "id": "hospital_theatres",
+    "title": "Head of Surgery on theatre utilisation",
+    "expect_none": false,
+    "transcript": "Interviewer: How are operating theatre slots allocated?\nHead of Surgery: By seniority, mostly. The most senior surgeons pick their blocks and everyone else fills what's left. It hasn't changed in fifteen years.\nInterviewer: What does that do to utilisation?\nHead of Surgery: We run at about 68 percent. Blocks get released only 24 hours ahead, which is too late for anyone else to use them.\nInterviewer: Has anyone tried to change it?\nHead of Surgery: Twice. Both times the proposal died in the clinical committee because senior surgeons felt it threatened their autonomy. The data was never the issue.\nInterviewer: Do you trust the utilisation data?\nHead of Surgery: Not fully. Anaesthetics logs start time differently from nursing, so the two systems disagree by up to twenty minutes per case.",
+    "planted": [
+      {"id": "seniority_allocation", "description": "Slots allocated by seniority, unchanged for fifteen years", "evidence": ["The most senior surgeons pick their blocks and everyone else fills what's left"]},
+      {"id": "late_release", "description": "Unused blocks released only 24 hours ahead, utilisation about 68 percent", "evidence": ["Blocks get released only 24 hours ahead, which is too late for anyone else to use them"]},
+      {"id": "reform_blocked_by_autonomy", "description": "Two reform attempts failed on surgeon autonomy, not data", "evidence": ["senior surgeons felt it threatened their autonomy", "The data was never the issue"]},
+      {"id": "inconsistent_data", "description": "Anaesthetics and nursing systems disagree on start times by up to twenty minutes", "evidence": ["Anaesthetics logs start time differently from nursing"]}
+    ]
+  },
+  {
+    "id": "saas_churn",
+    "title": "VP Customer Success on churn",
+    "expect_none": false,
+    "transcript": "Interviewer: Tell me about the customers you lose.\nVP Customer Success: Most churn happens in months four to six, right after onboarding ends. We hand the account to a pooled support team and the customer loses their named contact.\nInterviewer: Is it a product problem?\nVP Customer Success: Rarely. When we ran exit interviews, only one in ten cited missing features. The rest said they never got the product embedded in their daily workflow.\nInterviewer: What about pricing?\nVP Customer Success: Everyone assumes it's price, including our CEO. The data does not support it. Discounted customers churn at the same rate as full price ones.\nInterviewer: What would you change first?\nVP Customer Success: Keep the onboarding owner on the account until month nine. It would cost two more hires and I can't get the budget approved.",
+    "planted": [
+      {"id": "handoff_churn", "description": "Churn peaks at months four to six when the named contact is lost after onboarding", "evidence": ["Most churn happens in months four to six, right after onboarding ends", "the customer loses their named contact"]},
+      {"id": "not_product", "description": "Churn is mainly a workflow-embedding problem, not missing features", "evidence": ["only one in ten cited missing features", "never got the product embedded in their daily workflow"]},
+      {"id": "price_myth", "description": "Price is not the driver: discounted customers churn at the same rate", "evidence": ["Discounted customers churn at the same rate as full price ones"]},
+      {"id": "fix_blocked", "description": "The preferred fix needs two hires and the budget is not approved", "evidence": ["It would cost two more hires and I can't get the budget approved"]}
+    ]
+  },
+  {
+    "id": "bank_compliance",
+    "title": "Chief Compliance Officer on product approval",
+    "expect_none": false,
+    "transcript": "Interviewer: How does a new product get through compliance?\nChief Compliance Officer: Formally in six weeks. In practice it's closer to fourteen because product teams submit incomplete files and we spend weeks chasing missing documents.\nInterviewer: Why are files incomplete?\nChief Compliance Officer: The checklist lives in a PDF from 2019 that nobody has updated, so teams don't know what we actually require now.\nInterviewer: Do you have enough people?\nChief Compliance Officer: Headcount is fine. What we lack is a triage step, so a trivial fee change waits in the same queue as a new lending product.\nInterviewer: Does the business see compliance as a blocker?\nChief Compliance Officer: Yes, and frankly they have a point on timing, though not on substance.",
+    "planted": [
+      {"id": "six_vs_fourteen", "description": "Formal six weeks, actual fourteen, because files arrive incomplete", "evidence": ["In practice it's closer to fourteen because product teams submit incomplete files"]},
+      {"id": "stale_checklist", "description": "Requirements checklist is a 2019 PDF nobody updates", "evidence": ["The checklist lives in a PDF from 2019 that nobody has updated"]},
+      {"id": "no_triage", "description": "Bottleneck is missing triage, not headcount", "evidence": ["Headcount is fine. What we lack is a triage step", "a trivial fee change waits in the same queue as a new lending product"]},
+      {"id": "timing_point", "description": "Compliance concedes the business has a fair point on timing but not substance", "evidence": ["they have a point on timing, though not on substance"]}
+    ]
+  },
+  {
+    "id": "plant_changeovers",
+    "title": "Plant Manager on lost line time",
+    "expect_none": false,
+    "transcript": "Interviewer: Where does the line lose time?\nPlant Manager: Changeovers. We switch product variants about eleven times a week and each one takes around ninety minutes.\nInterviewer: Is that a technical limit?\nPlant Manager: No. Our best shift does it in forty minutes. The difference is that they pre-stage tooling during the previous run, and the other shifts never adopted it.\nInterviewer: Why not?\nPlant Manager: The practice was never written down. It lives in one shift leader's head, and he's retiring next spring.\nInterviewer: What about maintenance?\nPlant Manager: Mostly reactive. We only had three planned stops last quarter, and all three overran.",
+    "planted": [
+      {"id": "changeover_gap", "description": "Changeovers take about 90 minutes; best shift needs 40, so it is not a technical limit", "evidence": ["each one takes around ninety minutes", "Our best shift does it in forty minutes"]},
+      {"id": "undocumented_practice", "description": "Pre-staging practice is undocumented and held by a shift leader retiring next spring", "evidence": ["The practice was never written down", "he's retiring next spring"]},
+      {"id": "reactive_maintenance", "description": "Maintenance is mostly reactive; all three planned stops overran", "evidence": ["Mostly reactive", "all three overran"]}
+    ]
+  },
+  {
+    "id": "ceo_contradiction",
+    "title": "CEO contradicts self on decision speed",
+    "expect_none": false,
+    "transcript": "Interviewer: How would you describe decision-making in the leadership team?\nCEO: We are very fast. Decisions are made in the room and nobody relitigates them afterwards.\nInterviewer: Can you give me an example?\nCEO: Take the pricing decision in March. Actually, that one took us five months and got reversed twice, so maybe I'm being generous.\nInterviewer: So which is it?\nCEO: Operational decisions are fast. Anything touching the product portfolio drags, because the founders disagree and no one will break the tie.",
+    "planted": [
+      {"id": "pricing_example", "description": "The pricing decision took five months and was reversed twice, contradicting the claim of speed", "evidence": ["that one took us five months and got reversed twice"]},
+      {"id": "portfolio_drags", "description": "Portfolio decisions drag because founders disagree and nobody breaks the tie", "evidence": ["the founders disagree and no one will break the tie"]},
+      {"id": "operational_fast", "description": "Operational decisions are fast", "evidence": ["Operational decisions are fast"]}
+    ]
+  },
+  {
+    "id": "small_talk_only",
+    "title": "Opening pleasantries, interview cut short",
+    "expect_none": true,
+    "transcript": "Interviewer: Thanks for making time, I know it's a busy week.\nDirector: No problem at all. Did you find the office okay?\nInterviewer: Yes, the directions were perfect. Lovely building.\nDirector: Thanks. We moved in two years ago. The coffee is better than the old place at least.\nInterviewer: Unfortunately I have to leave early today, so we should reschedule the full conversation.\nDirector: Of course. Send me some times and I'll make it work.",
+    "planted": []
+  },
+  {
+    "id": "buzzword_wall",
+    "title": "Corporate buzzwords with no content",
+    "expect_none": true,
+    "transcript": "Interviewer: What is your biggest challenge right now?\nDirector: Well, it's really about transformation, you know, and leveraging synergies across the organisation to drive value.\nInterviewer: Can you be more specific?\nDirector: Sure, so we need to be more agile and customer-centric and break down silos, while staying focused on our strategic priorities.\nInterviewer: Any concrete example?\nDirector: I'd say it's a journey. We are on it, and there is a lot of energy in the organisation.",
+    "planted": []
+  }
+]

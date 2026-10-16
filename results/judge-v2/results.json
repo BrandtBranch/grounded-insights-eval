@@ -1,0 +1,956 @@
+{
+  "model": "claude-opus-5-5",
+  "judge_model": "claude-haiku-4-5",
+  "strategies": {
+    "naive": {
+      "aggregate": {
+        "cases": 8,
+        "insights": 35,
+        "faithfulness": 1.0,
+        "recall": 1.0,
+        "false_positive_rate": 1.0,
+        "judge_support": 1.0,
+        "judge_strict": 0.6285714285714286
+      },
+      "tokens": {
+        "input_tokens": 5715,
+        "output_tokens": 3191,
+        "judge_input_tokens": 23859,
+        "judge_output_tokens": 3846
+      },
+      "cases": [
+        {
+          "case_id": "retail_stockouts",
+          "expect_none": false,
+          "n_insights": 6,
+          "unfaithful_quotes": [],
+          "planted_total": 4,
+          "planted_found": [
+            "late_calendar",
+            "no_owner",
+            "private_spreadsheets",
+            "late_call"
+          ],
+          "planted_missed": [],
+          "judged": 6,
+          "judged_supported": 6,
+          "judged_strict": 4,
+          "unsupported_claims": [],
+          "inference_claims": [
+            "Store managers compensate with informal workarounds based on private data and instinct, which keeps knowledge siloed and inconsistent.",
+            "Reliance on tacit experience leaves new store managers exposed, so outcomes depend on individual tenure."
+          ],
+          "extraction": {
+            "insights": [
+              {
+                "claim": "Promotional stockouts stem from a timing gap: replenishment receives the promo calendar too late to cover supplier lead times.",
+                "quote": "the promo calendar is built by marketing in January and replenishment only sees it two weeks before launch. By then the supplier lead time is already longer than the notice we have."
+              },
+              {
+                "claim": "No function owns the promo planning gap, with planning, marketing, and supply chain each assuming someone else is responsible.",
+                "quote": "Nobody. Planning thinks marketing owns it, marketing thinks supply chain owns it."
+              },
+              {
+                "claim": "Stockouts carry a material, unowned financial cost of about 4% of promo revenue.",
+                "quote": "We lost roughly 4 percent of promo revenue last year to stockouts and nobody was accountable for that number."
+              },
+              {
+                "claim": "Store managers compensate with informal workarounds based on private data and instinct, which keeps knowledge siloed and inconsistent.",
+                "quote": "They keep a private spreadsheet of what usually sells out and they over-order by instinct."
+              },
+              {
+                "claim": "Reliance on tacit experience leaves new store managers exposed, so outcomes depend on individual tenure.",
+                "quote": "It works for the experienced ones. The new managers just get burned."
+              },
+              {
+                "claim": "The existing weekly cross-functional call is well attended and could be leveraged, but it currently happens too late to influence decisions.",
+                "quote": "Our weekly cross-functional call is actually good, people turn up. It just happens after the decisions are made."
+              }
+            ]
+          }
+        },
+        {
+          "case_id": "hospital_theatres",
+          "expect_none": false,
+          "n_insights": 4,
+          "unfaithful_quotes": [],
+          "planted_total": 4,
+          "planted_found": [
+            "seniority_allocation",
+            "late_release",
+            "reform_blocked_by_autonomy",
+            "inconsistent_data"
+          ],
+          "planted_missed": [],
+          "judged": 4,
+          "judged_supported": 4,
+          "judged_strict": 3,
+          "unsupported_claims": [],
+          "inference_claims": [
+            "Theatre utilisation is low at around 68 percent, partly because unused blocks are released too late to be reallocated."
+          ],
+          "extraction": {
+            "insights": [
+              {
+                "claim": "Theatre slot allocation is driven by seniority rather than need or efficiency, and the approach has remained unchanged for fifteen years.",
+                "quote": "By seniority, mostly. The most senior surgeons pick their blocks and everyone else fills what's left. It hasn't changed in fifteen years."
+              },
+              {
+                "claim": "Theatre utilisation is low at around 68 percent, partly because unused blocks are released too late to be reallocated.",
+                "quote": "We run at about 68 percent. Blocks get released only 24 hours ahead, which is too late for anyone else to use them."
+              },
+              {
+                "claim": "Previous reform attempts failed due to political resistance from senior surgeons protecting their autonomy, not because of weak evidence.",
+                "quote": "Both times the proposal died in the clinical committee because senior surgeons felt it threatened their autonomy. The data was never the issue."
+              },
+              {
+                "claim": "Utilisation data is not fully reliable because anaesthetics and nursing record start times inconsistently, creating discrepancies of up to twenty minutes per case.",
+                "quote": "Anaesthetics logs start time differently from nursing, so the two systems disagree by up to twenty minutes per case."
+              }
+            ]
+          }
+        },
+        {
+          "case_id": "saas_churn",
+          "expect_none": false,
+          "n_insights": 5,
+          "unfaithful_quotes": [],
+          "planted_total": 4,
+          "planted_found": [
+            "handoff_churn",
+            "not_product",
+            "price_myth",
+            "fix_blocked"
+          ],
+          "planted_missed": [],
+          "judged": 5,
+          "judged_supported": 5,
+          "judged_strict": 3,
+          "unsupported_claims": [],
+          "inference_claims": [
+            "Product gaps are a minor churn driver; the main cause is failure to embed the product in customers' daily workflow.",
+            "Discounting does not reduce churn, suggesting price concessions are an ineffective retention lever."
+          ],
+          "extraction": {
+            "insights": [
+              {
+                "claim": "Churn concentrates in months four to six, coinciding with the handoff from onboarding to a pooled support team and the loss of a named contact.",
+                "quote": "Most churn happens in months four to six, right after onboarding ends. We hand the account to a pooled support team and the customer loses their named contact."
+              },
+              {
+                "claim": "Product gaps are a minor churn driver; the main cause is failure to embed the product in customers' daily workflow.",
+                "quote": "only one in ten cited missing features. The rest said they never got the product embedded in their daily workflow."
+              },
+              {
+                "claim": "Leadership, including the CEO, believes pricing drives churn, but the data contradicts this assumption.",
+                "quote": "Everyone assumes it's price, including our CEO. The data does not support it."
+              },
+              {
+                "claim": "Discounting does not reduce churn, suggesting price concessions are an ineffective retention lever.",
+                "quote": "Discounted customers churn at the same rate as full price ones."
+              },
+              {
+                "claim": "The VP's top recommended fix is extending onboarding ownership to month nine, but it is blocked by an unapproved budget for two additional hires.",
+                "quote": "Keep the onboarding owner on the account until month nine. It would cost two more hires and I can't get the budget approved."
+              }
+            ]
+          }
+        },
+        {
+          "case_id": "bank_compliance",
+          "expect_none": false,
+          "n_insights": 4,
+          "unfaithful_quotes": [],
+          "planted_total": 4,
+          "planted_found": [
+            "six_vs_fourteen",
+            "stale_checklist",
+            "no_triage",
+            "timing_point"
+          ],
+          "planted_missed": [],
+          "judged": 4,
+          "judged_supported": 4,
+          "judged_strict": 3,
+          "unsupported_claims": [],
+          "inference_claims": [
+            "Actual compliance approval takes more than twice the formal timeline, largely due to time spent chasing missing documents from incomplete submissions."
+          ],
+          "extraction": {
+            "insights": [
+              {
+                "claim": "Actual compliance approval takes more than twice the formal timeline, largely due to time spent chasing missing documents from incomplete submissions.",
+                "quote": "Formally in six weeks. In practice it's closer to fourteen because product teams submit incomplete files and we spend weeks chasing missing documents."
+              },
+              {
+                "claim": "Incomplete submissions stem from an outdated requirements checklist that no longer reflects current compliance expectations.",
+                "quote": "The checklist lives in a PDF from 2019 that nobody has updated, so teams don't know what we actually require now."
+              },
+              {
+                "claim": "The bottleneck is process design, not capacity: there is no triage to separate low-risk changes from complex new products.",
+                "quote": "Headcount is fine. What we lack is a triage step, so a trivial fee change waits in the same queue as a new lending product."
+              },
+              {
+                "claim": "Compliance acknowledges the business's perception of it as a blocker is valid regarding speed, but defends the substance of its reviews.",
+                "quote": "Yes, and frankly they have a point on timing, though not on substance."
+              }
+            ]
+          }
+        },
+        {
+          "case_id": "plant_changeovers",
+          "expect_none": false,
+          "n_insights": 4,
+          "unfaithful_quotes": [],
+          "planted_total": 3,
+          "planted_found": [
+            "changeover_gap",
+            "undocumented_practice",
+            "reactive_maintenance"
+          ],
+          "planted_missed": [],
+          "judged": 4,
+          "judged_supported": 4,
+          "judged_strict": 2,
+          "unsupported_claims": [],
+          "inference_claims": [
+            "Changeovers are the primary source of lost line time, occurring frequently and taking a long time each.",
+            "Maintenance is largely reactive, and even the few planned stops are poorly executed."
+          ],
+          "extraction": {
+            "insights": [
+              {
+                "claim": "Changeovers are the primary source of lost line time, occurring frequently and taking a long time each.",
+                "quote": "Changeovers. We switch product variants about eleven times a week and each one takes around ninety minutes."
+              },
+              {
+                "claim": "Changeover duration is not a technical constraint; one shift already achieves less than half the typical time by pre-staging tooling.",
+                "quote": "Our best shift does it in forty minutes. The difference is that they pre-stage tooling during the previous run, and the other shifts never adopted it."
+              },
+              {
+                "claim": "The best practice is undocumented tacit knowledge held by one person, creating an urgent knowledge-loss risk with his upcoming retirement.",
+                "quote": "The practice was never written down. It lives in one shift leader's head, and he's retiring next spring."
+              },
+              {
+                "claim": "Maintenance is largely reactive, and even the few planned stops are poorly executed.",
+                "quote": "Mostly reactive. We only had three planned stops last quarter, and all three overran."
+              }
+            ]
+          }
+        },
+        {
+          "case_id": "ceo_contradiction",
+          "expect_none": false,
+          "n_insights": 4,
+          "unfaithful_quotes": [],
+          "planted_total": 3,
+          "planted_found": [
+            "pricing_example",
+            "portfolio_drags",
+            "operational_fast"
+          ],
+          "planted_missed": [],
+          "judged": 4,
+          "judged_supported": 4,
+          "judged_strict": 4,
+          "unsupported_claims": [],
+          "inference_claims": [],
+          "extraction": {
+            "insights": [
+              {
+                "claim": "The CEO initially characterises leadership decision-making as fast and final, a self-image the CEO later qualifies.",
+                "quote": "We are very fast. Decisions are made in the room and nobody relitigates them afterwards."
+              },
+              {
+                "claim": "The CEO's own example contradicts the claim of speed and finality: the March pricing decision was slow and repeatedly reversed.",
+                "quote": "Actually, that one took us five months and got reversed twice, so maybe I'm being generous."
+              },
+              {
+                "claim": "Decision speed varies by type: operational decisions move quickly while product portfolio decisions stall.",
+                "quote": "Operational decisions are fast. Anything touching the product portfolio drags"
+              },
+              {
+                "claim": "The root cause of slow portfolio decisions is unresolved founder disagreement and the absence of a mechanism or person to break deadlocks.",
+                "quote": "because the founders disagree and no one will break the tie."
+              }
+            ]
+          }
+        },
+        {
+          "case_id": "small_talk_only",
+          "expect_none": true,
+          "n_insights": 2,
+          "unfaithful_quotes": [],
+          "planted_total": 0,
+          "planted_found": [],
+          "planted_missed": [],
+          "judged": 2,
+          "judged_supported": 2,
+          "judged_strict": 1,
+          "unsupported_claims": [],
+          "inference_claims": [
+            "No substantive topics were covered because the interview was cut short, but the Director is open to rescheduling the full conversation."
+          ],
+          "extraction": {
+            "insights": [
+              {
+                "claim": "No substantive topics were covered because the interview was cut short, but the Director is open to rescheduling the full conversation.",
+                "quote": "Of course. Send me some times and I'll make it work."
+              },
+              {
+                "claim": "Minor context only: the organisation relocated to its current office about two years ago.",
+                "quote": "We moved in two years ago."
+              }
+            ]
+          }
+        },
+        {
+          "case_id": "buzzword_wall",
+          "expect_none": true,
+          "n_insights": 6,
+          "unfaithful_quotes": [],
+          "planted_total": 0,
+          "planted_found": [],
+          "planted_missed": [],
+          "judged": 6,
+          "judged_supported": 6,
+          "judged_strict": 2,
+          "unsupported_claims": [],
+          "inference_claims": [
+            "Organisational silos are the closest thing to a concrete pain point mentioned and are worth probing in a follow-up.",
+            "Asked directly for a concrete example, the Director gave none and described the change as ongoing, so there is no evidence yet of specific initiatives, milestones or results.",
+            "The Director sees the organisation as positive about the change, though this is a subjective impression with no supporting detail.",
+            "This interview yields little actionable evidence, so a follow-up should ask for specific examples, such as a recent decision slowed by silos, a customer complaint, or a priority that has stalled."
+          ],
+          "extraction": {
+            "insights": [
+              {
+                "claim": "The Director describes the biggest challenge in broad transformation terms, without naming a specific problem, metric or business area.",
+                "quote": "it's really about transformation, you know, and leveraging synergies across the organisation to drive value."
+              },
+              {
+                "claim": "When asked to be more specific, the Director lists aspirations (agility, customer focus, cross-functional collaboration) but does not say what is currently blocking them.",
+                "quote": "we need to be more agile and customer-centric and break down silos, while staying focused on our strategic priorities."
+              },
+              {
+                "claim": "Organisational silos are the closest thing to a concrete pain point mentioned and are worth probing in a follow-up.",
+                "quote": "break down silos"
+              },
+              {
+                "claim": "Asked directly for a concrete example, the Director gave none and described the change as ongoing, so there is no evidence yet of specific initiatives, milestones or results.",
+                "quote": "I'd say it's a journey. We are on it"
+              },
+              {
+                "claim": "The Director sees the organisation as positive about the change, though this is a subjective impression with no supporting detail.",
+                "quote": "there is a lot of energy in the organisation."
+              },
+              {
+                "claim": "This interview yields little actionable evidence, so a follow-up should ask for specific examples, such as a recent decision slowed by silos, a customer complaint, or a priority that has stalled.",
+                "quote": "Can you be more specific?"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "grounded": {
+      "aggregate": {
+        "cases": 8,
+        "insights": 29,
+        "faithfulness": 1.0,
+        "recall": 1.0,
+        "false_positive_rate": 0.0,
+        "judge_support": 1.0,
+        "judge_strict": 0.8275862068965517
+      },
+      "tokens": {
+        "input_tokens": 7907,
+        "output_tokens": 2530,
+        "judge_input_tokens": 20311,
+        "judge_output_tokens": 2683
+      },
+      "cases": [
+        {
+          "case_id": "retail_stockouts",
+          "expect_none": false,
+          "n_insights": 7,
+          "unfaithful_quotes": [],
+          "planted_total": 4,
+          "planted_found": [
+            "late_calendar",
+            "no_owner",
+            "private_spreadsheets",
+            "late_call"
+          ],
+          "planted_missed": [],
+          "judged": 7,
+          "judged_supported": 7,
+          "judged_strict": 5,
+          "unsupported_claims": [],
+          "inference_claims": [
+            "Supplier lead times exceed the notice replenishment gets, so promoted items stock out.",
+            "The weekly cross-functional call is well attended but happens after decisions are made, so it does not shape them."
+          ],
+          "extraction": {
+            "insights": [
+              {
+                "claim": "Replenishment only receives the promo calendar two weeks before launch, even though marketing builds it in January.",
+                "quote": "the promo calendar is built by marketing in January and replenishment only sees it two weeks before launch"
+              },
+              {
+                "claim": "Supplier lead times exceed the notice replenishment gets, so promoted items stock out.",
+                "quote": "By then the supplier lead time is already longer than the notice we have."
+              },
+              {
+                "claim": "No function owns the promo planning gap, because planning and marketing each believe another team owns it.",
+                "quote": "Nobody. Planning thinks marketing owns it, marketing thinks supply chain owns it."
+              },
+              {
+                "claim": "About 4% of promo revenue was lost to stockouts last year, and nobody was accountable for that loss.",
+                "quote": "We lost roughly 4 percent of promo revenue last year to stockouts and nobody was accountable for that number."
+              },
+              {
+                "claim": "Store managers work around the problem with private spreadsheets and by over-ordering on instinct.",
+                "quote": "They keep a private spreadsheet of what usually sells out and they over-order by instinct."
+              },
+              {
+                "claim": "The informal workaround succeeds only for experienced managers, while new managers suffer stockouts.",
+                "quote": "It works for the experienced ones. The new managers just get burned."
+              },
+              {
+                "claim": "The weekly cross-functional call is well attended but happens after decisions are made, so it does not shape them.",
+                "quote": "Our weekly cross-functional call is actually good, people turn up. It just happens after the decisions are made."
+              }
+            ]
+          }
+        },
+        {
+          "case_id": "hospital_theatres",
+          "expect_none": false,
+          "n_insights": 5,
+          "unfaithful_quotes": [],
+          "planted_total": 4,
+          "planted_found": [
+            "seniority_allocation",
+            "late_release",
+            "reform_blocked_by_autonomy",
+            "inconsistent_data"
+          ],
+          "planted_missed": [],
+          "judged": 5,
+          "judged_supported": 5,
+          "judged_strict": 5,
+          "unsupported_claims": [],
+          "inference_claims": [],
+          "extraction": {
+            "insights": [
+              {
+                "claim": "Operating theatre slots are allocated mainly by seniority, with senior surgeons choosing blocks first, and this process has not changed in fifteen years.",
+                "quote": "By seniority, mostly. The most senior surgeons pick their blocks and everyone else fills what's left. It hasn't changed in fifteen years."
+              },
+              {
+                "claim": "Theatre utilisation is about 68 percent, and blocks are released only 24 hours ahead, which the interviewee says is too late for others to use them.",
+                "quote": "We run at about 68 percent. Blocks get released only 24 hours ahead, which is too late for anyone else to use them."
+              },
+              {
+                "claim": "Two proposals to change allocation failed in the clinical committee because senior surgeons saw them as a threat to their autonomy, not because of the data.",
+                "quote": "Twice. Both times the proposal died in the clinical committee because senior surgeons felt it threatened their autonomy. The data was never the issue."
+              },
+              {
+                "claim": "The interviewee says the data was never the reason reform failed, yet also says they do not fully trust the utilisation data.",
+                "quote": "The data was never the issue. ... Not fully."
+              },
+              {
+                "claim": "Utilisation data is not fully reliable because anaesthetics and nursing log start times differently, so their systems disagree by up to twenty minutes per case.",
+                "quote": "Not fully. Anaesthetics logs start time differently from nursing, so the two systems disagree by up to twenty minutes per case."
+              }
+            ]
+          }
+        },
+        {
+          "case_id": "saas_churn",
+          "expect_none": false,
+          "n_insights": 5,
+          "unfaithful_quotes": [],
+          "planted_total": 4,
+          "planted_found": [
+            "handoff_churn",
+            "not_product",
+            "price_myth",
+            "fix_blocked"
+          ],
+          "planted_missed": [],
+          "judged": 5,
+          "judged_supported": 5,
+          "judged_strict": 4,
+          "unsupported_claims": [],
+          "inference_claims": [
+            "In exit interviews, only one in ten churned customers cited missing features; the rest said they never embedded the product in their daily workflow."
+          ],
+          "extraction": {
+            "insights": [
+              {
+                "claim": "Most churn occurs in months four to six, right after onboarding ends, when the account moves to a pooled support team and the customer loses their named contact.",
+                "quote": "Most churn happens in months four to six, right after onboarding ends. We hand the account to a pooled support team and the customer loses their named contact."
+              },
+              {
+                "claim": "In exit interviews, only one in ten churned customers cited missing features; the rest said they never embedded the product in their daily workflow.",
+                "quote": "When we ran exit interviews, only one in ten cited missing features. The rest said they never got the product embedded in their daily workflow."
+              },
+              {
+                "claim": "The CEO believes churn is driven by price, but discounted customers churn at the same rate as full-price customers, so the data does not support that belief.",
+                "quote": "Everyone assumes it's price, including our CEO. The data does not support it. Discounted customers churn at the same rate as full price ones."
+              },
+              {
+                "claim": "The VP's first proposed change is to keep the onboarding owner on the account until month nine.",
+                "quote": "Keep the onboarding owner on the account until month nine."
+              },
+              {
+                "claim": "The proposed change would require two more hires, and the VP cannot get the budget approved.",
+                "quote": "It would cost two more hires and I can't get the budget approved."
+              }
+            ]
+          }
+        },
+        {
+          "case_id": "bank_compliance",
+          "expect_none": false,
+          "n_insights": 4,
+          "unfaithful_quotes": [],
+          "planted_total": 4,
+          "planted_found": [
+            "six_vs_fourteen",
+            "stale_checklist",
+            "no_triage",
+            "timing_point"
+          ],
+          "planted_missed": [],
+          "judged": 4,
+          "judged_supported": 4,
+          "judged_strict": 4,
+          "unsupported_claims": [],
+          "inference_claims": [],
+          "extraction": {
+            "insights": [
+              {
+                "claim": "Compliance approval for a new product formally takes six weeks but in practice takes closer to fourteen, because incomplete submissions force the team to spend weeks chasing missing documents.",
+                "quote": "Formally in six weeks. In practice it's closer to fourteen because product teams submit incomplete files and we spend weeks chasing missing documents."
+              },
+              {
+                "claim": "Files arrive incomplete because the requirements checklist is a PDF from 2019 that has never been updated, so product teams don't know the current requirements.",
+                "quote": "The checklist lives in a PDF from 2019 that nobody has updated, so teams don't know what we actually require now."
+              },
+              {
+                "claim": "The constraint is not headcount but the absence of a triage step, so trivial changes wait in the same queue as major new products.",
+                "quote": "Headcount is fine. What we lack is a triage step, so a trivial fee change waits in the same queue as a new lending product."
+              },
+              {
+                "claim": "The CCO acknowledges the business sees compliance as a blocker and concedes this is valid on timing but not on substance.",
+                "quote": "Yes, and frankly they have a point on timing, though not on substance."
+              }
+            ]
+          }
+        },
+        {
+          "case_id": "plant_changeovers",
+          "expect_none": false,
+          "n_insights": 4,
+          "unfaithful_quotes": [],
+          "planted_total": 3,
+          "planted_found": [
+            "changeover_gap",
+            "undocumented_practice",
+            "reactive_maintenance"
+          ],
+          "planted_missed": [],
+          "judged": 4,
+          "judged_supported": 4,
+          "judged_strict": 2,
+          "unsupported_claims": [],
+          "inference_claims": [
+            "Changeovers are the main source of lost line time, occurring about eleven times a week at roughly ninety minutes each.",
+            "The pre-staging practice is undocumented and held by a single shift leader who is retiring next spring, creating a knowledge-loss risk."
+          ],
+          "extraction": {
+            "insights": [
+              {
+                "claim": "Changeovers are the main source of lost line time, occurring about eleven times a week at roughly ninety minutes each.",
+                "quote": "Changeovers. We switch product variants about eleven times a week and each one takes around ninety minutes."
+              },
+              {
+                "claim": "The long changeover time is not a technical limit: the best shift completes changeovers in forty minutes by pre-staging tooling during the previous run, a practice other shifts never adopted.",
+                "quote": "No. Our best shift does it in forty minutes. The difference is that they pre-stage tooling during the previous run, and the other shifts never adopted it."
+              },
+              {
+                "claim": "The pre-staging practice is undocumented and held by a single shift leader who is retiring next spring, creating a knowledge-loss risk.",
+                "quote": "The practice was never written down. It lives in one shift leader's head, and he's retiring next spring."
+              },
+              {
+                "claim": "Maintenance is mostly reactive, with only three planned stops last quarter, all of which overran.",
+                "quote": "Mostly reactive. We only had three planned stops last quarter, and all three overran."
+              }
+            ]
+          }
+        },
+        {
+          "case_id": "ceo_contradiction",
+          "expect_none": false,
+          "n_insights": 4,
+          "unfaithful_quotes": [],
+          "planted_total": 3,
+          "planted_found": [
+            "pricing_example",
+            "portfolio_drags",
+            "operational_fast"
+          ],
+          "planted_missed": [],
+          "judged": 4,
+          "judged_supported": 4,
+          "judged_strict": 4,
+          "unsupported_claims": [],
+          "inference_claims": [],
+          "extraction": {
+            "insights": [
+              {
+                "claim": "The CEO contradicts their own description of fast, final decision-making: the March pricing decision took five months and was reversed twice.",
+                "quote": "We are very fast. Decisions are made in the room and nobody relitigates them afterwards. ... Take the pricing decision in March. Actually, that one took us five months and got reversed twice, so maybe I'm being generous."
+              },
+              {
+                "claim": "The March pricing decision took five months to make and was reversed twice.",
+                "quote": "Take the pricing decision in March. Actually, that one took us five months and got reversed twice"
+              },
+              {
+                "claim": "Decision speed depends on the type of decision: operational decisions are fast, while decisions touching the product portfolio drag.",
+                "quote": "Operational decisions are fast. Anything touching the product portfolio drags"
+              },
+              {
+                "claim": "The CEO attributes slow product portfolio decisions to disagreement among the founders, with no one willing to break the tie.",
+                "quote": "Anything touching the product portfolio drags, because the founders disagree and no one will break the tie."
+              }
+            ]
+          }
+        },
+        {
+          "case_id": "small_talk_only",
+          "expect_none": true,
+          "n_insights": 0,
+          "unfaithful_quotes": [],
+          "planted_total": 0,
+          "planted_found": [],
+          "planted_missed": [],
+          "judged": 0,
+          "judged_supported": 0,
+          "judged_strict": 0,
+          "unsupported_claims": [],
+          "inference_claims": [],
+          "extraction": {
+            "insights": []
+          }
+        },
+        {
+          "case_id": "buzzword_wall",
+          "expect_none": true,
+          "n_insights": 0,
+          "unfaithful_quotes": [],
+          "planted_total": 0,
+          "planted_found": [],
+          "planted_missed": [],
+          "judged": 0,
+          "judged_supported": 0,
+          "judged_strict": 0,
+          "unsupported_claims": [],
+          "inference_claims": [],
+          "extraction": {
+            "insights": []
+          }
+        }
+      ]
+    },
+    "verify": {
+      "aggregate": {
+        "cases": 8,
+        "insights": 24,
+        "faithfulness": 1.0,
+        "recall": 0.9545454545454546,
+        "false_positive_rate": 0.0,
+        "judge_support": 1.0,
+        "judge_strict": 1.0
+      },
+      "tokens": {
+        "input_tokens": 14584,
+        "output_tokens": 3903,
+        "judge_input_tokens": 16824,
+        "judge_output_tokens": 1930
+      },
+      "cases": [
+        {
+          "case_id": "retail_stockouts",
+          "expect_none": false,
+          "n_insights": 5,
+          "unfaithful_quotes": [],
+          "planted_total": 4,
+          "planted_found": [
+            "late_calendar",
+            "no_owner",
+            "private_spreadsheets",
+            "late_call"
+          ],
+          "planted_missed": [],
+          "judged": 5,
+          "judged_supported": 5,
+          "judged_strict": 5,
+          "unsupported_claims": [],
+          "inference_claims": [],
+          "extraction": {
+            "insights": [
+              {
+                "claim": "Replenishment only sees the promo calendar, which marketing builds in January, two weeks before launch, and this notice is shorter than supplier lead times.",
+                "quote": "the promo calendar is built by marketing in January and replenishment only sees it two weeks before launch. By then the supplier lead time is already longer than the notice we have."
+              },
+              {
+                "claim": "No one owns the gap between promo planning and replenishment: planning thinks marketing owns it, and marketing thinks supply chain owns it.",
+                "quote": "Nobody. Planning thinks marketing owns it, marketing thinks supply chain owns it."
+              },
+              {
+                "claim": "Stockouts cost roughly 4 percent of promo revenue last year, and nobody was accountable for that loss.",
+                "quote": "We lost roughly 4 percent of promo revenue last year to stockouts and nobody was accountable for that number."
+              },
+              {
+                "claim": "Store managers work around the problem by keeping private spreadsheets of items that usually sell out and over-ordering by instinct.",
+                "quote": "They keep a private spreadsheet of what usually sells out and they over-order by instinct."
+              },
+              {
+                "claim": "The weekly cross-functional call is well attended but takes place after decisions have already been made.",
+                "quote": "Our weekly cross-functional call is actually good, people turn up. It just happens after the decisions are made."
+              }
+            ]
+          }
+        },
+        {
+          "case_id": "hospital_theatres",
+          "expect_none": false,
+          "n_insights": 4,
+          "unfaithful_quotes": [],
+          "planted_total": 4,
+          "planted_found": [
+            "seniority_allocation",
+            "late_release",
+            "reform_blocked_by_autonomy",
+            "inconsistent_data"
+          ],
+          "planted_missed": [],
+          "judged": 4,
+          "judged_supported": 4,
+          "judged_strict": 4,
+          "unsupported_claims": [],
+          "inference_claims": [],
+          "extraction": {
+            "insights": [
+              {
+                "claim": "Operating theatre slots are allocated mainly by seniority, with senior surgeons choosing blocks first, and the system has been unchanged for fifteen years.",
+                "quote": "By seniority, mostly. The most senior surgeons pick their blocks and everyone else fills what's left. It hasn't changed in fifteen years."
+              },
+              {
+                "claim": "Theatre utilisation is about 68 percent, and blocks are released only 24 hours ahead, which is too late for others to use them.",
+                "quote": "We run at about 68 percent. Blocks get released only 24 hours ahead, which is too late for anyone else to use them."
+              },
+              {
+                "claim": "Two attempts to change allocation failed in the clinical committee because senior surgeons felt their autonomy was threatened, not because of the data.",
+                "quote": "Twice. Both times the proposal died in the clinical committee because senior surgeons felt it threatened their autonomy. The data was never the issue."
+              },
+              {
+                "claim": "Utilisation data is not fully reliable: anaesthetics and nursing log start times differently, so the two systems disagree by up to twenty minutes per case.",
+                "quote": "Not fully. Anaesthetics logs start time differently from nursing, so the two systems disagree by up to twenty minutes per case."
+              }
+            ]
+          }
+        },
+        {
+          "case_id": "saas_churn",
+          "expect_none": false,
+          "n_insights": 4,
+          "unfaithful_quotes": [],
+          "planted_total": 4,
+          "planted_found": [
+            "handoff_churn",
+            "not_product",
+            "price_myth",
+            "fix_blocked"
+          ],
+          "planted_missed": [],
+          "judged": 4,
+          "judged_supported": 4,
+          "judged_strict": 4,
+          "unsupported_claims": [],
+          "inference_claims": [],
+          "extraction": {
+            "insights": [
+              {
+                "claim": "Most churn occurs in months four to six, right after onboarding ends, when accounts move to a pooled support team and customers lose their named contact.",
+                "quote": "Most churn happens in months four to six, right after onboarding ends. We hand the account to a pooled support team and the customer loses their named contact."
+              },
+              {
+                "claim": "Exit interviews show only one in ten churned customers cited missing features; the rest said they never embedded the product in their daily workflow.",
+                "quote": "When we ran exit interviews, only one in ten cited missing features. The rest said they never got the product embedded in their daily workflow."
+              },
+              {
+                "claim": "The CEO and others assume churn is driven by price, but the data contradicts this: discounted customers churn at the same rate as full-price customers.",
+                "quote": "Everyone assumes it's price, including our CEO. The data does not support it. Discounted customers churn at the same rate as full price ones."
+              },
+              {
+                "claim": "The proposed change would require two more hires, and the VP cannot get the budget approved.",
+                "quote": "It would cost two more hires and I can't get the budget approved."
+              }
+            ]
+          }
+        },
+        {
+          "case_id": "bank_compliance",
+          "expect_none": false,
+          "n_insights": 5,
+          "unfaithful_quotes": [],
+          "planted_total": 4,
+          "planted_found": [
+            "stale_checklist",
+            "no_triage",
+            "timing_point"
+          ],
+          "planted_missed": [
+            "six_vs_fourteen"
+          ],
+          "judged": 5,
+          "judged_supported": 5,
+          "judged_strict": 5,
+          "unsupported_claims": [],
+          "inference_claims": [],
+          "extraction": {
+            "insights": [
+              {
+                "claim": "The formal compliance approval timeline for a new product is six weeks, but in practice it takes about fourteen weeks.",
+                "quote": "Formally in six weeks. In practice it's closer to fourteen"
+              },
+              {
+                "claim": "The delay is caused by product teams submitting incomplete files, which leaves compliance spending weeks chasing missing documents.",
+                "quote": "because product teams submit incomplete files and we spend weeks chasing missing documents"
+              },
+              {
+                "claim": "Files are incomplete because the requirements checklist is an outdated 2019 PDF that nobody has updated, so teams do not know the current requirements.",
+                "quote": "The checklist lives in a PDF from 2019 that nobody has updated, so teams don't know what we actually require now."
+              },
+              {
+                "claim": "Headcount is not the constraint. The lack of a triage step is, because trivial changes wait in the same queue as major new products.",
+                "quote": "Headcount is fine. What we lack is a triage step, so a trivial fee change waits in the same queue as a new lending product."
+              },
+              {
+                "claim": "The CCO accepts the business's view that compliance is a blocker on timing, but rejects it on substance.",
+                "quote": "Yes, and frankly they have a point on timing, though not on substance."
+              }
+            ]
+          }
+        },
+        {
+          "case_id": "plant_changeovers",
+          "expect_none": false,
+          "n_insights": 3,
+          "unfaithful_quotes": [],
+          "planted_total": 3,
+          "planted_found": [
+            "changeover_gap",
+            "undocumented_practice",
+            "reactive_maintenance"
+          ],
+          "planted_missed": [],
+          "judged": 3,
+          "judged_supported": 3,
+          "judged_strict": 3,
+          "unsupported_claims": [],
+          "inference_claims": [],
+          "extraction": {
+            "insights": [
+              {
+                "claim": "Long changeovers are not a technical limit: the best shift completes them in forty minutes by pre-staging tooling during the previous run, a practice other shifts never adopted.",
+                "quote": "No. Our best shift does it in forty minutes. The difference is that they pre-stage tooling during the previous run, and the other shifts never adopted it."
+              },
+              {
+                "claim": "The fast-changeover practice is undocumented and held by a single shift leader who retires next spring, creating a knowledge-loss risk.",
+                "quote": "The practice was never written down. It lives in one shift leader's head, and he's retiring next spring."
+              },
+              {
+                "claim": "Maintenance is mostly reactive, with only three planned stops last quarter, all of which overran.",
+                "quote": "Mostly reactive. We only had three planned stops last quarter, and all three overran."
+              }
+            ]
+          }
+        },
+        {
+          "case_id": "ceo_contradiction",
+          "expect_none": false,
+          "n_insights": 3,
+          "unfaithful_quotes": [],
+          "planted_total": 3,
+          "planted_found": [
+            "pricing_example",
+            "portfolio_drags",
+            "operational_fast"
+          ],
+          "planted_missed": [],
+          "judged": 3,
+          "judged_supported": 3,
+          "judged_strict": 3,
+          "unsupported_claims": [],
+          "inference_claims": [],
+          "extraction": {
+            "insights": [
+              {
+                "claim": "The March pricing decision took five months and was reversed twice.",
+                "quote": "Take the pricing decision in March. Actually, that one took us five months and got reversed twice"
+              },
+              {
+                "claim": "Decision speed depends on the type of decision: operational decisions are fast, while product portfolio decisions drag.",
+                "quote": "Operational decisions are fast. Anything touching the product portfolio drags"
+              },
+              {
+                "claim": "Product portfolio decisions stall because the founders disagree and no one will break the tie.",
+                "quote": "Anything touching the product portfolio drags, because the founders disagree and no one will break the tie."
+              }
+            ]
+          }
+        },
+        {
+          "case_id": "small_talk_only",
+          "expect_none": true,
+          "n_insights": 0,
+          "unfaithful_quotes": [],
+          "planted_total": 0,
+          "planted_found": [],
+          "planted_missed": [],
+          "judged": 0,
+          "judged_supported": 0,
+          "judged_strict": 0,
+          "unsupported_claims": [],
+          "inference_claims": [],
+          "extraction": {
+            "insights": []
+          }
+        },
+        {
+          "case_id": "buzzword_wall",
+          "expect_none": true,
+          "n_insights": 0,
+          "unfaithful_quotes": [],
+          "planted_total": 0,
+          "planted_found": [],
+          "planted_missed": [],
+          "judged": 0,
+          "judged_supported": 0,
+          "judged_strict": 0,
+          "unsupported_claims": [],
+          "inference_claims": [],
+          "extraction": {
+            "insights": []
+          }
+        }
+      ]
+    }
+  }
+}

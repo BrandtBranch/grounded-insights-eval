@@ -1,0 +1,63 @@
+[
+  {
+    "id": "leading_morale",
+    "title": "Interviewer suggests morale; interviewee only weakly agrees",
+    "kind": "leading_question",
+    "expect_none": false,
+    "transcript": "Interviewer: We've heard morale is the real issue on the support team. Would you say that's right?\nTeam Lead: I suppose, yes, if you put it that way. Though honestly I'd say the tooling is what wears people down.\nInterviewer: What about the tooling specifically?\nTeam Lead: We use three ticketing systems that don't talk to each other, so agents re-type the same case notes. It adds about ten minutes to every escalation.\nInterviewer: And morale?\nTeam Lead: People are tired, sure. But nobody has quit over morale. The two who left last year said it was the tools.",
+    "planted": [
+      {"id": "weak_assent", "description": "Only weakly agrees with the interviewer's morale framing", "evidence": ["I suppose, yes, if you put it that way"]},
+      {"id": "tooling_is_cause", "description": "Believes tooling, not morale, wears people down", "evidence": ["the tooling is what wears people down"]},
+      {"id": "three_systems", "description": "Three disconnected ticketing systems add about ten minutes per escalation", "evidence": ["three ticketing systems that don't talk to each other", "It adds about ten minutes to every escalation"]},
+      {"id": "leavers_blamed_tools", "description": "The two leavers last year blamed the tools, not morale", "evidence": ["The two who left last year said it was the tools"]}
+    ]
+  },
+  {
+    "id": "hedged_figure",
+    "title": "CFO gives a figure and asks not to be quoted on it",
+    "kind": "hedged",
+    "expect_none": false,
+    "transcript": "Interviewer: How much of your revenue comes from the top three customers?\nCFO: I think it's maybe around thirty percent, but please don't quote me on that. Finance would have the real number.\nInterviewer: Is it growing or shrinking?\nCFO: I'd guess growing. Honestly I haven't looked at it since the summer.\nInterviewer: Is anyone tracking it?\nCFO: Not that I know of. It comes up when a big renewal is at risk and then it is forgotten again.",
+    "planted": [
+      {"id": "figure_is_a_guess", "description": "The thirty percent figure is a rough guess the CFO does not want attributed", "evidence": ["maybe around thirty percent, but please don't quote me on that"]},
+      {"id": "stale_view", "description": "CFO has not looked at the trend since the summer", "evidence": ["I haven't looked at it since the summer"]},
+      {"id": "not_tracked", "description": "Concentration is raised only when a renewal is at risk, then forgotten", "evidence": ["It comes up when a big renewal is at risk and then it is forgotten again"]}
+    ]
+  },
+  {
+    "id": "reported_views",
+    "title": "Director reports other people's views alongside their own",
+    "kind": "reported_views",
+    "expect_none": false,
+    "transcript": "Interviewer: Why do you think the rollout stalled?\nProgramme Director: Depends who you ask. Sales thinks it's the training, IT thinks it's the vendor, and the vendor says we never gave them requirements.\nInterviewer: And what's your view?\nProgramme Director: Mine is simpler. We never agreed who could say no to a change request, so scope grew every week.\nInterviewer: Do you think sales is right about training?\nProgramme Director: Partly. But training is a symptom. People weren't trained on a moving target.",
+    "planted": [
+      {"id": "own_view", "description": "The director's own view: nobody owned the right to refuse change requests, so scope grew", "evidence": ["We never agreed who could say no to a change request, so scope grew every week"]},
+      {"id": "reported_views", "description": "Sales, IT and the vendor each blame someone else", "evidence": ["Sales thinks it's the training, IT thinks it's the vendor"]},
+      {"id": "training_symptom", "description": "Training problems are a symptom of a moving target", "evidence": ["training is a symptom"]}
+    ]
+  },
+  {
+    "id": "negated_causes",
+    "title": "HR Director rules out the obvious causes of attrition",
+    "kind": "negation",
+    "expect_none": false,
+    "transcript": "Interviewer: Is pay the reason people are leaving?\nHR Director: No. We benchmarked pay last spring and we sit at the median. It's not pay.\nInterviewer: Is it workload then?\nHR Director: Not really either. Hours are stable. What people say in exit interviews is that they can't see a next role here.\nInterviewer: So career paths?\nHR Director: Exactly, and we haven't had a promotion round in eighteen months.",
+    "planted": [
+      {"id": "not_pay", "description": "Pay is at the median and is explicitly not the reason people leave", "evidence": ["We benchmarked pay last spring and we sit at the median", "It's not pay"]},
+      {"id": "no_next_role", "description": "Leavers say they cannot see a next role", "evidence": ["they can't see a next role here"]},
+      {"id": "no_promotions", "description": "No promotion round for eighteen months", "evidence": ["we haven't had a promotion round in eighteen months"]}
+    ]
+  },
+  {
+    "id": "buried_in_ramble",
+    "title": "Key insight buried inside a rambling answer",
+    "kind": "buried",
+    "expect_none": false,
+    "transcript": "Interviewer: How does the weekly planning meeting work?\nOperations Lead: Oh, it's a long story. We started it when Karin ran the department, back when we were still in the old building, and honestly the meeting was different then. We used to have it on Mondays, but Mondays didn't work because of the deliveries, so we moved it to Tuesdays, and then someone suggested Wednesdays because of the regional call, and in the end we settled on Tuesday afternoons. The room is too small, but that is a different matter. Anyway, the format is that each team lead gives a two minute update, and we go round the table. What I would say, if you're asking what actually matters, is that nobody is allowed to raise a problem in that meeting unless they already have a solution, so the real problems get raised in the corridor afterwards and never get written down. Then there's the coffee situation, which I won't get into. We also have a rota for who takes minutes, though to be honest the minutes are rarely read.\nInterviewer: Thanks, that's helpful.",
+    "planted": [
+      {"id": "solution_rule", "description": "Problems may only be raised if the person already has a solution", "evidence": ["nobody is allowed to raise a problem in that meeting unless they already have a solution"]},
+      {"id": "corridor_problems", "description": "Real problems are raised in the corridor and never recorded", "evidence": ["the real problems get raised in the corridor afterwards and never get written down"]},
+      {"id": "minutes_unread", "description": "Minutes are taken but rarely read", "evidence": ["the minutes are rarely read"]}
+    ]
+  }
+]
